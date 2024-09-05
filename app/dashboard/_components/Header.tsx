@@ -3,7 +3,7 @@ import React from 'react'
 
 const Header = () => {
     return (
-        <div className='p-5 shadow-sm border-b-2 flex justify-between '>
+        <div className='p-5 shadow-sm border-b-2 flex justify-between bg-white'>
             <div className='flex items-center gap-2 p-2 border rounded-md max-w-lg'>
                 <Search />
                 

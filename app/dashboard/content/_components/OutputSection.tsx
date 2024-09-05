@@ -1,9 +1,9 @@
 import React from 'react'
 
-const OutputDection = () => {
+const OutputSection = () => {
   return (
     <div>OutputDection</div>
   )
 }
 
-export default OutputDection
+export default OutputSection
