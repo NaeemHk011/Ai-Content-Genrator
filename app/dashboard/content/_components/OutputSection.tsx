@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Copy } from 'lucide-react';
 
 interface Props {
-  aiOutput: string;
+  aiOutput: any;
 }
 
 const OutputSection = ({ aiOutput }: Props) => {
