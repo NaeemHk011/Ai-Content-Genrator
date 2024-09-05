@@ -1,7 +1,7 @@
 'use client'
-import React, { useState } from 'react'
-import FormSection from '../_components/FormSection';
-import OutputSection from '../_components/OutputSection';
+import React, { useState } from 'react';
+import FormSection from '../_components/FormsSection'; // Adjusted import
+import OutputSection from '../_components/OutputSection'; // Adjusted import
 import { TEMPLATE } from '../../_components/TemplateSection';
 import Template from '@/app/(data)/Template';
 import { ArrowLeft } from 'lucide-react';
