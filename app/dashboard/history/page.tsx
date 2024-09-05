@@ -3,13 +3,13 @@
 import React, { useEffect, useState } from 'react';
 import Loader from '@/components/ui/Loader';
 
-interface AIOutputType {
+export interface AIOutputType {
     id: number;
     formData: string;
     aiResponse: string;
     templateSlug: string;
     createdBy: string;
-    createdAt: string;
+    createdAt: string; // Date and time
 }
 
 const HistoryPage = () => {
@@ -66,18 +66,22 @@ const HistoryPage = () => {
                 <table className="min-w-full bg-white border border-gray-200">
                     <thead>
                         <tr>
+                            <th className="py-2 px-4 border-b">S.No.</th> {/* Serial Number */}
                             <th className="py-2 px-4 border-b">AI Response</th>
                             <th className="py-2 px-4 border-b">Template Slug</th>
                             <th className="py-2 px-4 border-b">Created By</th>
-                            <th className="py-2 px-4 border-b">Actions</th> {/* Add a new header for actions */}
+                            <th className="py-2 px-4 border-b">Created At</th> {/* Date and Time */}
+                            <th className="py-2 px-4 border-b">Actions</th> {/* Actions */}
                         </tr>
                     </thead>
                     <tbody>
-                        {historyData.map((item) => (
+                        {historyData.map((item, index) => (
                             <tr key={item.id}>
+                                <td className="py-2 px-4 border-b">{index + 1}</td> {/* Serial Number */}
                                 <td className="py-2 px-4 border-b line-clamp-2">{item.aiResponse}</td>
                                 <td className="py-2 px-4 border-b ">{item.templateSlug}</td>
                                 <td className="py-2 px-4 border-b">{item.createdBy}</td>
+                                <td className="py-2 px-4 border-b">{item.createdAt}</td> {/* Date and Time */}
                                 <td className="py-2 px-4 border-b">
                                     <button
                                         onClick={() => copyToClipboard(item.aiResponse)}

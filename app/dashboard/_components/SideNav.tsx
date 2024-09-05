@@ -4,6 +4,7 @@ import React, { useEffect } from 'react'
 import { FileClock, Home, Settings, WalletCards } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
+import UserTrack from './UserTrack'
 
 const SideNav = () => {
     const MenuList = [
@@ -25,7 +26,7 @@ const SideNav = () => {
         {
             name: 'Setting',
             icon: Settings,
-            path: '/dashboard/setting'
+            path: '/dashboard/settings'
         }
     ]
 
@@ -49,6 +50,9 @@ const SideNav = () => {
                         </div>
                     </Link>
                 ))}
+            </div>
+            <div className='absolute bottom-10 left-0 w-full '>
+                <UserTrack />
             </div>
         </div>
     )
