@@ -5,15 +5,15 @@ import { Button } from '@/components/ui/button';
 import { Copy } from 'lucide-react';
 
 interface Props {
-  aiOutput: any;
+  AiOutput: any;
 }
 
-const OutputSection = ({ aiOutput }: Props) => {
+const OutputSection = ({ AiOutput }: Props) => {
   const editorRef: any = useRef();
   useEffect(() => {
     const editorInstance = editorRef.current.getInstance();
-    editorInstance.setMarkdown(aiOutput);
-  }, [aiOutput])
+    editorInstance.setMarkdown(AiOutput);
+  }, [AiOutput])
   return (
     <div className='bg-white shadow-lg border'>
       <div className='flex justify-between items-center p-5'>

@@ -11,7 +11,7 @@ import { chatSession } from '@/utils/AiModal';
 import { db } from '@/utils/db';
 import { useUser } from '@clerk/nextjs';
 import moment from 'moment';
-import { AiOutput } from '@/utils/schema';
+import { aiOutput } from '@/utils/schema';
 interface PROPS {
     params: {
         'template-slug': string
@@ -20,7 +20,7 @@ interface PROPS {
 
 const CreateNewContent = (props: PROPS) => {
     const SelectedTemplate: TEMPLATE | undefined = Template?.find((item) => item.slug == props.params['template-slug'])
-    const [aiOutput, setaiOutput] = useState<string>('')
+    const [AiOutput, setAiOutput] = useState<string>('')
     const [loading, setloading] = useState(false);
     const { user } = useUser();
     const generateAiContent = async (formData: any) => {
@@ -28,19 +28,34 @@ const CreateNewContent = (props: PROPS) => {
         const SelectedPrompt = SelectedTemplate?.aiPrompt;
         const FinalAiPrompt = JSON.stringify(formData) + ", " + SelectedPrompt;
         const result = await chatSession.sendMessage(FinalAiPrompt)
-        setaiOutput(result?.response.text())
+        setAiOutput(result?.response.text())
         await saveInDb(formData, SelectedTemplate?.slug, result?.response.text())
         setloading(false);
     }
-    const saveInDb = async (formData: any, slug: any, aiRes: string) => {
-        const result = await db.insert(AiOutput).values({
-            formData: formData,
-            templateSlug: slug,
-            aiResponse: aiRes,
-            createdBy: user?.primaryEmailAddress?.emailAddress,
-            createdAt: moment().format('YYYY-MM-DD'),
+    const saveInDb = async (
+        formData: any,
+        slug: string | undefined,
+        aiRes: string | undefined
+    ) => {
+        // Ensure values are defined or fallback to a default value
+        const formDataString = formData || ''; // Default to empty string if undefined
+        const templateSlug = slug || ''; // Default to empty string if undefined
+        const aiResponse = aiRes || ''; // Default to empty string if undefined
+        const createdBy = user?.primaryEmailAddress?.emailAddress || ''; // Fallback for user email
+        const createdAt = moment().format('YYYY-MM-DD') || ''; // Always have a date
+
+        // Insert data into the database
+        const result = await db.insert(aiOutput).values({
+            formData: formDataString,
+            templateSlug: templateSlug,
+            aiResponse: aiResponse,
+            createdBy: createdBy,
+            createdAt: createdAt,
         });
-    }
+
+        console.log(result); // Log the result to verify the insert
+    };
+
 
     return (
         <div className='p-5'>
@@ -51,7 +66,7 @@ const CreateNewContent = (props: PROPS) => {
 
                 {/* outputSection  */}
                 <div className='col-span-2'>
-                    <OutputSection aiOutput={aiOutput} />
+                    <OutputSection AiOutput={AiOutput} />
                 </div>
             </div>
         </div>
