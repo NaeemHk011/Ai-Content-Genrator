@@ -29,9 +29,9 @@ export default function Home() {
 
                 {/* Developer Name and Social Links */}
                 <div className="bottom-5 text-center">
-                    <p className="text-sm text-gray-800">Developed by 💞 Naeem Hussain</p>
+                    <p className="text-sm text-gray-700">Developed by 💞 Naeem Hussain</p>
 
-                    {/* Social Media Links */}
+                    {/* Social Media Linksss */}
                     <div className="flex justify-center space-x-8 mt-2">
                         <a href="https://github.com/NaeemHk011" target="_blank" rel="noopener noreferrer" className=" hover:text-gray-600">
                             GitHub
