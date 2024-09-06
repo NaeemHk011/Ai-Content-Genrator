@@ -69,7 +69,6 @@ const HistoryPage = () => {
                             <th className="py-2 px-4 border-b">S.No.</th> {/* Serial Number */}
                             <th className="py-2 px-4 border-b">AI Response</th>
                             <th className="py-2 px-4 border-b">Template Slug</th>
-                            <th className="py-2 px-4 border-b">Created By</th>
                             <th className="py-2 px-4 border-b">Created At</th> {/* Date and Time */}
                             <th className="py-2 px-4 border-b">Actions</th> {/* Actions */}
                         </tr>
@@ -80,7 +79,6 @@ const HistoryPage = () => {
                                 <td className="py-2 px-4 border-b">{index + 1}</td> {/* Serial Number */}
                                 <td className="py-2 px-4 border-b line-clamp-2">{item.aiResponse}</td>
                                 <td className="py-2 px-4 border-b ">{item.templateSlug}</td>
-                                <td className="py-2 px-4 border-b">{item.createdBy}</td>
                                 <td className="py-2 px-4 border-b">{item.createdAt}</td> {/* Date and Time */}
                                 <td className="py-2 px-4 border-b">
                                     <button
