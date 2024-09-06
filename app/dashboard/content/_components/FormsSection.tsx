@@ -44,7 +44,7 @@ const FormSection = ({ SelectedTemplate, userFormInput, loading }: PROPS) => {
                         }
                     </div>
                 ))}
-                <Button type='submit' className='w-full py-6 items-center' disabled={loading}>{loading && <Loader2Icon className='animate-spin' />}Generate Content</Button>
+                <Button type='submit' className='w-full py-6 items-center bg-[#00cdac]' disabled={loading}>{loading && <Loader2Icon className='animate-spin' />}Generate Content</Button>
             </form>
         </div>
     )
