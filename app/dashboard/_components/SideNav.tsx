@@ -36,17 +36,20 @@ const SideNav = () => {
     }, [path]);
 
     return (
-        <div className='h-screen p-5 shadow-sm border bg-white'>
-            <div className='flex justify-center'>
-                <Image src={'/log.svg'} alt='logo' width={120} height={100} />
-            </div>
-            <hr className='my-7 border' />
+        <div className='h-screen p-5 mb-10 shadow-sm border bg-white'>
+            <Link href={'/'}><div className='flex justify-center gap-1'>
+
+                <Image src={'/logo.svg'} alt='logo' width={60} height={60} />
+                <h2 className='semibold'>Content Generator Ai</h2>
+
+            </div> </Link>
+            <hr className='my-1.5 border' />
             <div className='mt-3'>
                 {MenuList.map((menu, index) => (
                     <Link key={index} href={menu.path}>
-                        <div className={`flex mt-5 gap-2 mb-2 p-3 items-center hover:bg-primary hover:text-white rounded-lg cursor-pointer ${path === menu.path ? 'bg-primary text-white' : ''}`}>
+                        <div className={`flex mt-3 gap-4  p-2 items-center hover:bg-[#00cdac] hover:text-white rounded-lg cursor-pointer ${path === menu.path ? 'bg-[#00cdac] text-black' : ''}`}>
                             <menu.icon className='h-6 w-6' />
-                            <h2 className='text-lg'>{menu.name}</h2>
+                            <h2 className='text-md'>{menu.name}</h2>
                         </div>
                     </Link>
                 ))}
@@ -54,6 +57,7 @@ const SideNav = () => {
             <div className='absolute bottom-10 left-0 w-full '>
                 <UserTrack />
             </div>
+
         </div>
     )
 }

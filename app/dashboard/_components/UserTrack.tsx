@@ -34,16 +34,16 @@ const UserTrack = () => {
         setTotalUsage(total)
     }
     return (
-        <div className='m-5'>
-            <div className='bg-primary text-white rounded-lg p-3'>
+        <div className='m-7'>
+            <div className='bg-[#00cdac] text-black rounded-lg p-3'>
                 <h2 className='font-medium'>Credits</h2>
-                <div className='h-2 bg-[#9981f9] w-full  rounded-full mt-3'>
-                    <div className='h-2 bg-white rounded-full' style={{ width: (TotalUsage / 100000) * 100 + "%" }}></div>
+                <div className='h-2 bg-slate-200 w-full  rounded-full mt-3'>
+                    <div className='h-2 bg-black rounded-full' style={{ width: (TotalUsage / 100000) * 100 + "%" }}></div>
 
                 </div>
                 <h2 className='text-sm my-2'>{TotalUsage}/10,0000 Credits Used</h2>
             </div>
-            <Button variant={'secondary'} className='text-primary w-full my-3'>Upgrade</Button>
+            <Button variant={'secondary'} className='bg-[#00cdac] w-full my-3'>Upgrade</Button>
 
         </div>
     )

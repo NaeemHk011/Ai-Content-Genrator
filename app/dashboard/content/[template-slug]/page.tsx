@@ -59,7 +59,7 @@ const CreateNewContent = (props: PROPS) => {
 
     return (
         <div className='p-5'>
-            <Link href={'/dashboard'} > <Button><ArrowLeft />Back</Button></Link>
+            <Link href={'/dashboard'} > <Button className='bg-black'><ArrowLeft />Back</Button></Link>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-10 p-5'>
                 {/* from section  */}
                 <FormSection SelectedTemplate={SelectedTemplate} userFormInput={(v: any) => generateAiContent(v)} loading={loading} />
