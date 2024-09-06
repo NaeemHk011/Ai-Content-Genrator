@@ -1,7 +1,6 @@
 
 import { Button } from "@/components/ui/button";
 import Eyes from "@/components/ui/Eyes";
-import { Linkedin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
