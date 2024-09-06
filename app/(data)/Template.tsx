@@ -228,24 +228,6 @@ export default [
         ]
     },
     {
-        name: 'English Grammer Check',
-        desc: 'AI Model to Correct your english grammer by providing the text',
-        icon: 'https://cdn-icons-png.flaticon.com/128/12596/12596700.png',
-        category: 'english',
-
-        slug: 'english-grammer-checker',
-        aiPrompt: 'Rewrite the inputText by correcting the grammer and give output in  in rich text editor format',
-        form: [
-            {
-                label: 'Enter text to correct the grammer',
-                field: 'input',
-                name: 'inputText',
-                required: true
-            },
-
-        ]
-    },
-    {
         name: 'Write Code',
         desc: 'AI Model to generate programming code in any language',
         icon: 'https://cdn-icons-png.flaticon.com/128/6062/6062646.png',
