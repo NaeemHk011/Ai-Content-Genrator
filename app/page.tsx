@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="bg-slate-50">
+    <div className="bg-slate-50 h-screen">
       <div className="flex items-center justify-between h-12 w-full bg-[#00cdac]">
         <div className="flex">
           <Image
